@@ -82,7 +82,7 @@ class ZoteroApi
     {
         $this->apiKey = $apiKey;
 
-        $this->client = new Client(['base_uri' => self::API_BASE_URL]);
+        $this->client = new Client(['base_url' => self::API_BASE_URL]);
     }
 
     /**
@@ -284,7 +284,7 @@ class ZoteroApi
             ->get($this->path, [
                 'timeout' => $this->timeout,
                 'connect_timeout' => $this->connectionTimeout,
-                'delay' => $this->delay,
+                // 'delay' => $this->delay,
                 'headers' => [
                     'Authorization' => 'Bearer ' . $this->apiKey,
                     'Zotero-API-Version' => $this->version
